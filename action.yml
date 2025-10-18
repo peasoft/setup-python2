@@ -4,7 +4,9 @@ author: "peasoft"
 runs:
   using: "composite"
   steps:
-    - run: sudo apt install -y build-essential checkinstall curl libncursesw5-dev libssl-dev libsqlite3-dev tk-dev libgdbm-dev libc6-dev libbz2-dev libffi-dev
+    - run: sudo apt-get purge -y python-is-python3 || true
+      shell: bash
+    - run: sudo apt-get install -y build-essential checkinstall curl libncursesw5-dev libssl-dev libsqlite3-dev tk-dev libgdbm-dev libc6-dev libbz2-dev libffi-dev
       shell: bash
     - run: |
         curl -o /tmp/Python-2.7.18.tgz https://www.python.org/ftp/python/2.7.18/Python-2.7.18.tgz
